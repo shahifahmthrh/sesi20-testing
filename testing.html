@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test Suite</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.14.1.css">
+  </head>
+  <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.14.1.js"></script>
+
+    <script>
+        QUnit.test( "a test", function( assert ) {
+         assert.equal( 1, "1", "String '1' and number 1 have the same value" );
+        });
+
+        QUnit.test( "equal test", function( assert ) {
+        assert.equal( 0, 0, "Zero, Zero; equal succeeds" );
+        assert.equal( "", 0, "Empty, Zero; equal succeeds" );
+        assert.equal( "", "", "Empty, Empty; equal succeeds" );
+
+        assert.equal( 3, 3, "Three, 3; equal succeeds" );
+        assert.equal("false", "false", "null, false; equal succeeds" );
+        });
+
+        function square( x ) {
+            return x * x;
+        }
+        
+        QUnit.test( "square()", assert => {
+            assert.equal( square( 4 ), 16, "square(4)" );
+        });
+    </script>
+</body>
+</html>
